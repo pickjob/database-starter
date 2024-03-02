@@ -1,0 +1,62 @@
+-- 
+-- SQLite:
+--      数据类型:
+--          NULL
+--          INTEGER
+--          REAL
+--          TEXT
+--          BLOB
+--      函数:
+--          NULL:
+--              IFNULL(X, Y)
+--              IIF(X, Y, Z)
+--          数值函数:
+--              ROUND(X, Y)
+--          文本函数:
+--              SUBSTRING(X, Y)
+--              REPLACE(X, Y)
+--              TRIM(X)
+--              LENGTH(X)
+--          日期时间函数:
+--              DATE(time-value, modifier, modifier, ...)
+--              TIME(time-value, modifier, modifier, ...)
+--              DATETIME(time-value, modifier, modifier, ...)
+--              JULIANDAY(time-value, modifier, modifier, ...)
+--              UNIXEPOCH(time-value, modifier, modifier, ...)
+--              TIMEDIFF(time-value, time-value)
+--              STRFTIME(format, time-value, modifier, modifier, ...)
+--                  format
+--                      Y: year: 0000-9999
+--                      %m: month: 01-12
+--                      %d: day of month, 00
+--                      
+--                      %H: hour: 00-24
+--                      %M: minute: 00-59
+--                      %S: seconds: 00-59
+-- 
+--                      %J: Julian day number (fractional)
+--                      %W: week of year: 00-53
+--                      %w: day of week 0-6 with Sunday==0
+--                      %j: day of year: 001-366
+--                      %f: fractional seconds, SS.SSS
+--                      %s: seconds since 1970-01-01
+--                          
+--                      %%: %
+--                  time-value:
+--                      YYYY-MM-DD HH:MM
+--                      YYYY-MM-DD HH:MM:SS
+--                      YYYY-MM-DD HH:MM:SS.SSS
+--                      YYYY-MM-DD
+--                      HH:MM
+--                      HH:MM:SS
+--                      HH:MM:SS.SSS
+--                      now
+-- 
+--          聚合函数:
+--              MAX(X) / MIN(X) / AVG(X)
+--              COUNT(X) / SUM(X)
+--              GROUP_CONCAT(X[, Y])
+-- 
+--      特定用法:
+--          INTEGER PRIMARY KEY AUTOINCREMENT: 自增
+-- 
