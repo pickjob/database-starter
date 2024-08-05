@@ -18,30 +18,16 @@
 --              TRIM(X)
 --              LENGTH(X)
 --          日期时间函数:
---              DATE(time-value, modifier, modifier, ...)
---              TIME(time-value, modifier, modifier, ...)
---              DATETIME(time-value, modifier, modifier, ...)
---              JULIANDAY(time-value, modifier, modifier, ...)
+--              DATE(time-value, modifier, modifier, ...): YYYY-MM-DD 返回时间字符串
+--              TIME(time-value, modifier, modifier, ...): HH:MM:SS 返回时间字符串
+--              DATETIME(time-value, modifier, modifier, ...): YYYY-MM-DD HH:MM:SS 返回时间字符串
+--              STRFTIME(format, time-value, modifier, modifier, ...)： 自定义格式 返回时间字符串
 --              UNIXEPOCH(time-value, modifier, modifier, ...)
---              TIMEDIFF(time-value, time-value)
---              STRFTIME(format, time-value, modifier, modifier, ...)
+--              TIMEDIFF(time-value, time-value) 
+--                  modifier:
+--                      [+ / -] NNN seconds / minutes / hours / days / months / years
 --                  format
---                      Y: year: 0000-9999
---                      %m: month: 01-12
---                      %d: day of month, 00
---                      
---                      %H: hour: 00-24
---                      %M: minute: 00-59
---                      %S: seconds: 00-59
--- 
---                      %J: Julian day number (fractional)
---                      %W: week of year: 00-53
---                      %w: day of week 0-6 with Sunday==0
---                      %j: day of year: 001-366
---                      %f: fractional seconds, SS.SSS
---                      %s: seconds since 1970-01-01
---                          
---                      %%: %
+--                      %Y-%m-%d %H:%M:%S: YYYY-MM-DD HH:MM:SS
 --                  time-value:
 --                      YYYY-MM-DD HH:MM
 --                      YYYY-MM-DD HH:MM:SS
@@ -59,4 +45,8 @@
 -- 
 --      特定用法:
 --          INTEGER PRIMARY KEY AUTOINCREMENT: 自增
--- 
+--      PRAGMA:
+--          PRAGMA auto_vacuum = 'FULL'; -- 全自动, 允许数据库文件随着数据从数据库移除而缩小
+--          PRAGMA count_changes = true; -- 获取或设置数据操作语句的返回值
+--          PRAGMA synchronous = 'NORMAL'; -- NORMAL, 在关键的磁盘操作的每个序列后同步; FULL, 在每个关键的磁盘操作后同步
+--          PRAGMA temp_store = 'FILE'; -- 临时文件存储, FILE / MEMORY
